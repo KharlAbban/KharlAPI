@@ -26,9 +26,9 @@
 <body>
 
   <!-- Submit A Project Form -->
-  <!-- <section class="contact-form-section my-2 pt-3">
+  <section class="contact-form-section my-2 pt-3">
     <div class="container">
-        <form class="row g-3 needs-validation" novalidate method="post" action="/api/submit-project">
+        <form action="/api/submit-project" class="needs-validation row g-3" novalidate method="post" enctype="multipart/form-data">
             <div class="col-md-4">
                 <label for="name" class="form-label">Project Name*</label>
                 <input type="text" class="form-control" name="name" id="name" required>
@@ -98,7 +98,7 @@
             </div>
             <div class="col-md-8">
                 <label for="image">Picture Background</label>
-                <input type="file" class="form-control" name="image" accept="image/*">
+                <input type="file" class="form-control" name="projectImage" accept="image/*">
             </div>
             <div class="col-md-4">
                 <label for="client">Client</label>
@@ -109,18 +109,7 @@
             </div>
         </form>
     </div>
-  </section> -->
-
-  <form action="/api/submit-project" method="post" enctype="multipart/form-data">
-    <div class="col-md-8">
-        <label for="image">Picture Background</label>
-        <input type="file" class="form-control" name="image" accept="image/*">
-    </div>
-    <div class="col-12 mb-5">
-        <button class="btn btn-primary w-100" type="submit">Submit form</button>
-    </div>
-  </form>
-
+  </section>
 </body>
 
 </html>

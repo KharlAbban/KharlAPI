@@ -1,5 +1,6 @@
 // Import Project Model
 const Project = require("../../models/projectModel");
+const Category = require("../../models/categoryModel");
 
 function showAPIDocsPage (req, res) {
     res.render("apiDocs");
@@ -21,6 +22,7 @@ async function getAllProjects (req, res) {
 async function submitProject (req, res) {
     console.log(req.body);
     console.log(req.file);
+    res.json({message: "Done"});
 }
 
 module.exports = {
