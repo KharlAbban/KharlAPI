@@ -2,6 +2,7 @@
 if (process.env.NODE_ENV !== "production") require("dotenv").config();
 
 // Set up server
+const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const express = require("express");
 const app = express();
@@ -13,6 +14,7 @@ const apiRoute = require("./source/routes/apiRoutes/apiRouter");
 const homeRoute = require("./source/routes/homeRoutes/homeRouter");
 
 // Server config
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
