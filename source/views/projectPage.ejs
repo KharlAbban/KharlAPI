@@ -2,114 +2,131 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KharlAbban | Projects Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KharlAbban | Projects Page</title>
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-  <link rel="stylesheet" href="/styles/projectPage.css">
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+    <link rel="stylesheet" href="/styles/projectPage.css">
 
-  <!-- Scripts -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
-  <script src="/scripts/projectPage.js" defer></script>
+    <!-- Scripts -->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="/scripts/projectPage.js" defer></script>
 </head>
 
 <body>
 
-  <!-- Submit A Project Form -->
-  <section class="contact-form-section my-2 pt-3">
-    <div class="container">
-        <form action="/api/submit-project" class="needs-validation row g-3" novalidate method="post" enctype="multipart/form-data">
-            <div class="col-md-4">
-                <label for="name" class="form-label">Project Name*</label>
-                <input type="text" class="form-control" name="name" id="name" required>
-                <div class="valid-feedback">
-                Looks good!
+    <!-- Submit A Project Form -->
+    <section class="contact-form-section my-2 pt-3">
+        <div class="container">
+            <form action="/api/submit-project" class="needs-validation row g-3" novalidate method="post"
+                enctype="multipart/form-data">
+                <div class="col-md-4">
+                    <label for="name" class="form-label">Project Name*</label>
+                    <input type="text" class="form-control" name="name" id="name" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please enter a project name.
+                    </div>
                 </div>
-                <div class="invalid-feedback">
-                    Please enter a project name.
+                <div class="col-md-4">
+                    <label for="projectID" class="form-label">Project ID</label>
+                    <input type="number" min="1" class="form-control" name="projectID">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <label for="projectID" class="form-label">Project ID</label>
-                <input type="number" min="1" class="form-control" name="projectID">
-            </div>
-            <div class="col-md-4">
-                <label for="category" class="form-label">Category*</label>
-                <select class="form-select" name="category" required>
-                    <option selected value="Business">Business</option>
-                    <option value="Sports">Sports</option>
-                </select>
-                <div class="invalid-feedback">
-                Please select a valid state.
+                <div class="col-md-4">
+                    <label for="category" class="form-label">Category*</label>
+                    <select class="form-select" name="category" required>
+                        <option selected value="Business">Business</option>
+                        <option value="Sports">Sports</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid state.
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-6">
-                <label for="summary" class="form-label">Summary*</label>
-                <input type="text" class="form-control" name="summary" id="summary" required>
-                <div class="invalid-feedback">
-                Enter a summary of project.
+                <div class="col-md-6">
+                    <label for="summary" class="form-label">Summary*</label>
+                    <input type="text" class="form-control" name="summary" id="summary" required>
+                    <div class="invalid-feedback">
+                        Enter a summary of project.
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <label for="status" class="form-label">Status*</label>
-                <select class="form-select" id="status" name="status" required>
-                <option value="Yet to begin">Yet to begin</option>
-                <option value="Ongoing">Ongoing</option>
-                <option value="Completed">Completed</option>
-                </select>
-                <div class="invalid-feedback">
-                Please select a valid option.
+                <div class="col-md-3">
+                    <label for="status" class="form-label">Status*</label>
+                    <select class="form-select" id="status" name="status" required>
+                        <option value="Yet to begin">Yet to begin</option>
+                        <option value="Ongoing">Ongoing</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    <div class="invalid-feedback">
+                        Please select a valid option.
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-3">
-                <label for="author" class="form-label">Author*</label>
-                <input type="text" class="form-control" name="author" id="author" required>
-                <div class="invalid-feedback">
-                Please provide an author.
+                <div class="col-md-3">
+                    <label for="author" class="form-label">Author*</label>
+                    <input type="text" class="form-control" name="author" id="author" required>
+                    <div class="invalid-feedback">
+                        Please provide an author.
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-12 mb-3">
-                <label for="description">Description</label>
-                <textarea name="description" id="" class="form-select" cols="30" rows="5"></textarea>
-            </div>
-            <div class="col-md-4">
-                <label for="codeHub" class="form-label">CodeBase*</label>
-                <input type="text" class="form-control" name="codeHub" required>
-                <div class="invalid-feedback">Enter a code base, eg. a GitHub repo</div>
-            </div>
-            <div class="col-md-4">
-                <label for="liveSite" class="form-label">Live Site</label>
-                <input type="text" class="form-control" name="liveSite">
-            </div>
-            <div class="col-md-4">
-                <label for="author_email" class="form-label">Author Email*</label>
-                <input type="email" class="form-control" name="author_email" required>
-                <div class="invalid-feedback">You need to provide the author's email</div>
-            </div>
-            <div class="col-md-8">
-                <label for="image">Picture Background</label>
-                <input type="file" class="form-control" name="projectImage" accept="image/*">
-            </div>
-            <div class="col-md-4">
-                <label for="client">Client</label>
-                <input type="text" class="form-control" name="client">
-            </div>
-            <div class="col-12 mb-5">
-                <button class="btn btn-primary w-100" type="submit">Submit form</button>
-            </div>
-        </form>
-    </div>
-  </section>
+                <div class="col-md-12 mb-3">
+                    <label for="description">Description</label>
+                    <textarea name="description" id="" class="form-select" cols="30" rows="5"></textarea>
+                </div>
+                <div class="col-md-4">
+                    <label for="codeHub" class="form-label">CodeBase*</label>
+                    <input type="text" class="form-control" name="codeHub" required>
+                    <div class="invalid-feedback">Enter a code base, eg. a GitHub repo</div>
+                </div>
+                <div class="col-md-4">
+                    <label for="liveSite" class="form-label">Live Site</label>
+                    <input type="text" class="form-control" name="liveSite">
+                </div>
+                <div class="col-md-4">
+                    <label for="author_email" class="form-label">Author Email*</label>
+                    <input type="email" class="form-control" name="author_email" required>
+                    <div class="invalid-feedback">You need to provide the author's email</div>
+                </div>
+                <div class="col-md-8">
+                    <label for="projectImage">Picture Background</label>
+                    <input type="file" class="form-control" name="projectImage" accept="image/*">
+                </div>
+                <div class="col-md-4">
+                    <label for="client">Client</label>
+                    <input type="text" class="form-control" name="client">
+                </div>
+                <div class="col-12 mb-5">
+                    <button class="btn btn-primary w-100" type="submit">Submit form</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- <form action="/api/submit-project" class="needs-validation row g-3" novalidate method="post"
+        enctype="multipart/form-data">
+        <div class="col-md-4">
+            <label for="categoryName" class="form-label">Category</label>
+            <input type="text" class="form-control" name="categoryName" required>
+        </div>
+        <div class="col-md-8">
+            <label for="projectImage">Picture Background</label>
+            <input type="file" class="form-control" name="projectImage" accept="image/*">
+        </div>
+        <div class="col-12 mb-5">
+            <button class="btn btn-primary w-100" type="submit">Submit form</button>
+        </div>
+    </form> -->
+
 </body>
 
 </html>
