@@ -29,8 +29,7 @@ async function submitProject(req, res) {
 		codeHub,
 		liveSite,
 		author_email,
-		client,
-		// imageName,
+		client
 	} = req.body;
 	let imageName = "defaultWebsiteImage.jpg";
 	if (req.file) imageName = req.file.filename;
