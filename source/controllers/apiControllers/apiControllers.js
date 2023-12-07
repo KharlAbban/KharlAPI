@@ -3,8 +3,6 @@ const Project = require("../../models/projectModel");
 const Category = require("../../models/categoryModel");
 const {putObjectInsideBucket, getObjectInsideBucket} = require("../../middlewares/s3actions");
 
-const {GetObjectCommand} = require("@aws-sdk/client-s3")
-
 function showAPIDocsPage(req, res) {
 	res.render("apiDocs");
 }
