@@ -9,8 +9,10 @@ function showAPIDocsPage(req, res) {
 
 async function getAllProjects(req, res) {
 	// res.render("projectPage");
+	const limitNumber = req.query.limit;
 	try {
-		const projects = await Project.find({}, { _id: 0, createdAt: 0, lastUpdatedAt: 0 });
+		const projects = await Project.find().sort({"createdAt":-1}).limit(limitNumber);
+		// console.log(projects);
 
 		for (const project of projects) {
 			const imageUrl = await getObjectInsideBucket(project.imageName);
