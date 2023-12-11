@@ -97,10 +97,25 @@ async function submitCategory(req, res) {
 	}
 }
 
+async function getSingleProject (req, res) {
+	const projectId = req.params.id;
+	console.log(projectId);
+	try {
+		const project = await Project.findById({_id: projectId});
+		const imageUrl = await getObjectInsideBucket(project.imageName);
+		project._doc.imageurl = await getObjectInsideBucket(project.imageName);
+		console.log(project);
+		res.json(project);
+	} catch (err) {
+		console.log(err.message);
+	}
+}
+
 module.exports = {
 	showAPIDocsPage,
 	getAllProjects,
 	submitProject,
 	getCategory,
 	submitCategory,
+	getSingleProject
 };

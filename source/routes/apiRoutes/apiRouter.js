@@ -12,6 +12,7 @@ apiRouter.use("/projects", express.static("public/uploads"));
 apiRouter.get("/", apiControllers.showAPIDocsPage);
 
 apiRouter.get("/projects", apiControllers.getAllProjects);
+apiRouter.get("/projects/:id", apiControllers.getSingleProject);
 apiRouter.post(
 	"/submit-project",
 	upload.single("projectImage"),
